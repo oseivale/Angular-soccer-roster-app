@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav>{{ title }}</nav>
+<h4 class="ml-md-5">Add a new player below</h4>
+
+<form>
+  <div class="form-group row px-md-5">
+    <div class="form-group col-md-6">
+      <label for="firstName">First Name</label>
+      <input #firstName type="text" class="form-control" placeholder="Enter First Name" name="firstName" ngModel>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lastName">Last Name</label>
+      <input #lastName type="text" class="form-control" placeholder="Enter Last Name" name="Last Name" ngModel> 
+    </div>
+    <div class="form-group form-check ml-md-3">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label" for="male-check">Male</label>
+    </div>
+    <div class="form-group form-check ml-md-3">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label" for="female-check">Female</label>
+    </div>
+  </div>
+   <button type="button" class="btn btn-info btn-large ml-md-5" (click)="addPlayer(firstName.value, lastName.value)">Add Player</button>
+</form>
+
+<div class="data ml-md-5">
+    <span *ngFor="let firstName of firstNames">{{ firstName}}</span>
+</div>
