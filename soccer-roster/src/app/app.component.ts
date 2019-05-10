@@ -7,9 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'My Soccer Roster';
-  firstNames=[];
+  fullNames=[];
 
-  addPlayer(value1, value2){
-  	this.firstNames.push(value1, value2)
+
+  addPlayer(firstName, lastName){
+  	this.fullNames.push(firstName + " " + lastName)
+
+	}
+
+deleteItem(item){
+	for(let i=0; i <= this.fullNames.length; i++){
+			 if(item == this.fullNames[i]){
+	  		
+	  		this.fullNames.splice(i, 1)
+	  		
+	  	}
+	}
   }
-}
+ }
+
