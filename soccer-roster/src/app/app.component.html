@@ -1,35 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<h4>Welcome to my soccer roster</h4>
 
-<nav>{{ title }}</nav>
-<h4 class="ml-md-5">Add a new player below</h4>
-<h4><a [routerLink] = "'/players'">View Players</a></h4>
-  <form>
-    <div class="form-group row px-md-5">
-      <div class="form-group col-md-6">
-        <label for="firstName">First Name</label>
-        <input #firstName type="text" class="form-control" placeholder="Enter First Name" name="firstName" ngModel>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="lastName">Last Name</label>
-        <input #lastName type="text" class="form-control" placeholder="Enter Last Name" name="Last Name" ngModel> 
-      </div>
-      <div class="form-group form-check ml-md-3">
-        <input #male type="checkbox" class="form-check-input" name="Male">
-        <label class="form-check-label" for="male-check">Male</label>
-      </div>
-      <div class="form-group form-check ml-md-3">
-        <input #female type="checkbox" class="form-check-input">
-        <label class="form-check-label" for="female-check">Female</label>
-      </div>
-    </div>
-     <button type="button" class="btn btn-info btn-large ml-md-5" (click)="addPlayer(firstName.value, lastName.value)">Add Player</button>
-  </form>
 
- <div class="card">
-      <p *ngFor="let fullName of fullNames" class="card-body">Name: {{ fullName }}
-       <a [routerLink] = "'/player/:id'" class="btn btn-primary ml-md-4">View Profile</a>
-        <a href="#" class="btn btn-success ml-md-4">Edit</a>
-           <li class="btn btn-secondary ml-md-4" (click)="deleteItem(fullName)"> Delete</li> 
-      </p> 
-  </div>
+<router-outlet></router-outlet>
+
 
