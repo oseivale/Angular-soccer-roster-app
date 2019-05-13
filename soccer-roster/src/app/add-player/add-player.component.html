@@ -8,27 +8,23 @@
       </div>
       <div class="form-group col-md-6">
         <label for="lastName">Last Name</label>
-        <input #lastName type="text" class="form-control" placeholder="Enter Last Name" name="Last Name" ngModel> 
+        <input #lastName type="text" class="form-control" placeholder="Enter Last Name" name="Last Name"> 
       </div>
-      <div class="form-group form-check ml-md-3">
-        <input #male type="checkbox" class="form-check-input" name="Male">
-        <label class="form-check-label" for="male-check">Male</label>
-      </div>
-      <div class="form-group form-check ml-md-3">
-        <input #female type="checkbox" class="form-check-input">
-        <label class="form-check-label" for="female-check">Female</label>
-      </div>
+      <div class="form-group col-md-6">
+          <label for="gender">Gender</label>
+          <input #gender type="text" class="form-control" placeholder="Enter Gender" name="Gender"> 
+        </div>
     </div>
-     <button type="button" class="btn btn-info btn-large ml-md-5" (click)="addPlayer(firstName.value, lastName.value)">Add Player</button>
+     <button type="button" class="btn btn-info btn-large ml-md-5" (click)="addPlayer(firstName.value, lastName.value, gender.value)">Add Player</button>
   </form>
 
 
  <div>
-      <p *ngFor="let fullName of fullNames" class="card-body">Name: {{ fullName }}
+      <p *ngFor="let fullName of fullNames" class="card-body">Info: {{ fullName }} 
       <button routerLink= "/player-detail" class="btn btn-primary ml-md-4">View Profile</button>
       <a href="#" class="btn btn-success ml-md-4">Edit</a>
       <a class="btn btn-secondary ml-md-4" (click)="deleteItem(fullName)">Delete</a> 
-      </p> 
+      </p>
   </div>
 
 

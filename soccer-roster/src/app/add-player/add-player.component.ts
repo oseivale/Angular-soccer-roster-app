@@ -9,9 +9,10 @@ export class AddPlayerComponent implements OnInit {
 
 fullNames=[];
 
-addPlayer(firstName, lastName){
-  	this.fullNames.push(firstName + " " + lastName)
+addPlayer(firstName, lastName, gender){
 
+			this.fullNames.push(firstName + " " + lastName + " " + gender)
+			
 	}
 
 
