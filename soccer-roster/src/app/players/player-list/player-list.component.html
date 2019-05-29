@@ -1,0 +1,17 @@
+<table class="table table-hover">
+	<thead>
+		<th>Full Name</th>
+		<th>Jersey Number</th>
+		<th>Position</th>
+		<th>Team Name</th>	
+	</thead>
+	<tbody>
+		<tr *ngFor="let player of list">
+			<td (click)="onEdit(player)">{{player.fullName}}</td>
+			<td (click)="onEdit(player)">{{player.jerseyNumber}}</td>
+			<td (click)="onEdit(player)">{{player.position}}</td>
+			<td (click)="onEdit(player)">{{player.teamName}}</td>
+			<td><a class="btn text-danger" (click)="onDelete(player.id)"><i class="fa fa-trash"></i></a></td>
+		</tr>
+	</tbody>
+</table>

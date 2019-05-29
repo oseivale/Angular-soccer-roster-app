@@ -1,49 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
+import { environment } from 'src/environments/environment';
+import { PlayersComponent } from './players/players.component';
+import { PlayerComponent } from './players/player/player.component';
+import { PlayerListComponent } from './players/player-list/player-list.component';
 
-import { RouterModule, Routes } from '@angular/router';
-import { PlayerListComponent } from './player-list/player-list.component';
-import { PlayerDetailComponent } from './player-detail/player-detail.component';
-import { AddPlayerComponent } from './add-player/add-player.component';
+import { PlayerService } from './shared/player.service';
 
-
-const appRoutes: Routes = [
-	{
-		path: 'player-detail',
-		component: PlayerDetailComponent
-	},
-  {
-    path: 'add-player',
-    component: AddPlayerComponent
-  },
-	{
-		path: 'player-list',
-		component: PlayerListComponent
-	},
-  {
-    path: '',
-    redirectTo: '/',
-    pathMatch: 'full'
-  },
-  
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerListComponent,
-    PlayerDetailComponent,
-    AddPlayerComponent
+    PlayersComponent,
+    PlayerComponent,
+    PlayerListComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
-    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
