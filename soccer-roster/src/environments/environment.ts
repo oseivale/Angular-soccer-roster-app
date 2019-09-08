@@ -4,7 +4,15 @@
 
 export const environment = {
   production: false,
-
+    firebaseConfig : {
+    apiKey: "AIzaSyBKQ-Vnk45XN6HiAMwSDetdSJvhr2KHki8",
+    authDomain: "soccerroster-e68af.firebaseapp.com",
+    databaseURL: "https://soccerroster-e68af.firebaseio.com",
+    projectId: "soccerroster-e68af",
+    storageBucket: "soccerroster-e68af.appspot.com",
+    messagingSenderId: "845935328765",
+    appId: "1:845935328765:web:4a47799bc94d9550"
+  }
 };
 
 /*

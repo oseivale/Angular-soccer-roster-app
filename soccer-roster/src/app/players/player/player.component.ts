@@ -32,14 +32,20 @@ export class PlayerComponent implements OnInit {
   	}
   }
 
-  onSubmit(form:NgForm){
-  	let data = Object.assign({}, form.value); 
+  onSubmit(form:NgForm) {
+	console.log(form.value);
+	let data = Object.assign({}, form.value);
+	
+	console.log(data);
+	
   	delete data.id;
-  	if(form.value.id == null)
+	  
+	  if(form.value.id == null)
   		this.firestore.collection('players').add(data);
   	else
-  	this.firestore.doc('players/'+ form.value.id).update(data);
-  		this.resetForm(form);
+  		this.firestore.doc('players/'+ form.value.id).update(data);
+	
+	this.resetForm(form);
   	this.toastr.success('Submitted successfully', 'Player Registration');
   }
 
