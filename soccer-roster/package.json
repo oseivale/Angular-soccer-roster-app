@@ -2,16 +2,17 @@
   "name": "soccer-roster",
   "version": "0.0.0",
   "engines": {
-    "node": "10.16.2"
+    "node": "10.16.2",
+    "npm": "6.11.2"
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm start",
+    "heroku-postbuild": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build"
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
